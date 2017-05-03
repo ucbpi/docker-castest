@@ -11,10 +11,10 @@ https://github.com/apereo/cas-webapp-docker
   * Sets up a volume, so an external directory can be used to persist the configuration under `/etc/cas`
 
 ## Build
-docker build -t ucb/castest .
+`docker build -t ucb/castest .`
 
 ## Run
-docker run -d -p 8080:8080 -p 8443:8443 -v /srv/castest/data:/etc/cas:z --restart=on-failure:1 --name="castest" ucb/castest
+`docker run -d -p 8080:8080 -p 8443:8443 -v /srv/castest/data:/etc/cas:z --restart=on-failure:1 --name="castest" ucb/castest`
 
 ## Possible Changes
 
