@@ -9,6 +9,9 @@ https://github.com/apereo/cas-webapp-docker
   * Bypasses the cas-overlay-template build.sh script, so the Maven build and packaging occurs during the final `docker build` step, and running the container involves Java executing the cas.war file
   * Ready for SSL on port 8443 (supply your own java keystore)
   * Sets up a volume, so an external directory can be used to persist the configuration under `/etc/cas`
+  * Now includes a pom.xml modified from cas-overlay-template to inject an additional depedency (SAML)
+    
+    **IMPACT**: This container will no longer build the latest CAS release noted in cas-overlay-template until the override pom.xml is updated to change the `cas.version` value.
 
 ## Sample Configuration
 The **sampleconfig** directory contains a basic set of configuration files that will launch the CAS application and get it listening on ports 8080 and 8443. None of this is suitable as-is for non-testing use. No real data sources should be configured with this setup, especially not until you replace the publicly available sample encryption bits:
