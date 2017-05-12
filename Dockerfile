@@ -20,6 +20,7 @@ RUN git clone --depth 1 --single-branch https://github.com/apereo/cas-overlay-te
     && cp -f /cas-overlay/etc/cas/config/*.* /etc/cas/config
 
 COPY thekeystore /etc/cas/
+COPY pom.xml /cas-overlay/
 
 RUN useradd castest \
     && chmod -R 750 /cas-overlay/bin \
