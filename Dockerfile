@@ -15,7 +15,7 @@ RUN yum -y install \
 
 WORKDIR /
 
-RUN git clone --depth 1 --single-branch https://github.com/apereo/cas-overlay-template.git cas-overlay \
+RUN git clone --depth 1 --single-branch --branch 5.0.x https://github.com/apereo/cas-overlay-template.git cas-overlay \
     && mkdir -p /etc/cas/config /etc/cas/services /cas-overlay/bin \
     && cp -f /cas-overlay/etc/cas/config/*.* /etc/cas/config
 
